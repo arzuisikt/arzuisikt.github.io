@@ -2,77 +2,1160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arzu Isik</title>
+
+    <meta
+        name="description"
+        content="Arzu Isik is a PhD student in Finance at the University of Calgary. Her research focuses on behavioral finance, experimental finance, financial technology, and market microstructure."
+    >
+
+    <title>Arzu Isik | Finance PhD Student</title>
 
     <style>
+        :root {
+            --navy: #1f3552;
+            --blue: #2457d6;
+            --light-blue: #eef3ff;
+            --text: #2f3136;
+            --muted: #626b78;
+            --light: #f6f7f9;
+            --border: #dfe3e8;
+            --white: #ffffff;
+            --shadow: 0 4px 18px rgba(20, 35, 60, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 95px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f7f8fa;
-            color: #222;
-        }
-
-        header {
-            background-color: #17324d;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px;
-            background-color: white;
-            border-radius: 10px;
-        }
-
-        h1, h2 {
-            color: #17324d;
-        }
-
-        header h1 {
-            color: white;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.7;
         }
 
         a {
-            color: #17324d;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(20, 35, 60, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .site-name {
+            color: #282b30;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            white-space: nowrap;
+        }
+
+        .site-name:hover {
+            text-decoration: none;
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        .menu-button {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 27px;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* Main container */
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 95px 0 80px;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(238, 243, 255, 0.8),
+                    rgba(255, 255, 255, 1)
+                );
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.65fr 0.75fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            margin-bottom: 20px;
+            background-color: var(--light-blue);
+            color: var(--blue);
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: 54px;
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h2 {
+            margin: 0 0 25px;
+            color: var(--muted);
+            font-size: 24px;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 0 28px;
+            font-size: 18px;
+            color: #484f59;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            border-radius: 6px;
+            border: 1px solid var(--blue);
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            color: var(--white);
+            background-color: var(--blue);
+        }
+
+        .button-primary:hover {
+            color: var(--white);
+            background-color: #1748c2;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            color: var(--blue);
+            background-color: var(--white);
+        }
+
+        .button-secondary:hover {
+            color: var(--white);
+            background-color: var(--blue);
+            text-decoration: none;
+        }
+
+        .profile-placeholder {
+            width: 260px;
+            height: 260px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(135deg, #dfe8ff, #f5f7fb);
+            border: 8px solid var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            color: var(--navy);
+            font-size: 75px;
+            font-weight: 700;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 82px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:nth-of-type(even) {
+            background-color: #fbfcfe;
+        }
+
+        .section-heading {
+            margin-bottom: 38px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 10px;
+            color: var(--navy);
+            font-size: 37px;
+            font-weight: 600;
+            letter-spacing: -0.7px;
+        }
+
+        .section-heading p {
+            max-width: 760px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .about-text {
+            max-width: 900px;
+            font-size: 18px;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 27px;
+        }
+
+        .interest-tag {
+            padding: 8px 14px;
+            background-color: var(--light-blue);
+            border: 1px solid #d8e2ff;
+            border-radius: 20px;
+            color: var(--navy);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Cards */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            padding: 27px;
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            margin: 0 0 9px;
+            color: var(--navy);
+            font-size: 21px;
+            line-height: 1.4;
+        }
+
+        .card .authors {
+            margin-bottom: 13px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .card p {
+            margin: 0;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: var(--light-blue);
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Timeline */
+
+        .timeline {
+            position: relative;
+            margin-left: 10px;
+            padding-left: 30px;
+            border-left: 2px solid #dce3ee;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 38px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: -38px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--blue);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px #dce3ee;
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 4px;
+            color: var(--navy);
+            font-size: 20px;
+        }
+
+        .timeline-item .institution {
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .timeline-item .date {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* Presentations */
+
+        .presentation-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .presentation-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .presentation-list li:first-child {
+            padding-top: 0;
+        }
+
+        .presentation-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .presentation-title {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 650;
+        }
+
+        .presentation-details {
+            color: var(--muted);
+        }
+
+        /* CV area */
+
+        .cv-box {
+            padding: 42px;
+            background:
+                linear-gradient(120deg, var(--navy), #2d5794);
+            border-radius: 12px;
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .cv-box h3 {
+            margin: 0 0 12px;
+            font-size: 28px;
+        }
+
+        .cv-box p {
+            max-width: 700px;
+            margin: 0 0 22px;
+            color: #eef3ff;
+        }
+
+        .cv-box .button {
+            border-color: var(--white);
+            color: var(--navy);
+            background-color: var(--white);
+        }
+
+        .cv-box .button:hover {
+            color: var(--white);
+            background-color: transparent;
+        }
+
+        /* Contact */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background-color: var(--white);
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--navy);
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 32px 20px;
+            background-color: #f5f7fa;
+            color: var(--muted);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .profile-placeholder {
+                margin: 0;
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 12px 28px 20px;
+                background-color: var(--white);
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 12px 0;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .card-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 65px 0 55px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 62px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 31px;
+            }
+
+            .cv-box {
+                padding: 30px 24px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Arzu Isik</h1>
-    <p>PhD Student in Finance | University of Calgary</p>
-</header>
+    <!-- Navigation -->
 
-<main>
-    <h2>About Me</h2>
+    <nav class="navbar">
+        <div class="nav-container">
 
-    <p>
-        I am a PhD student in Finance at the Haskayne School of Business,
-        University of Calgary.
-    </p>
+            <a class="site-name" href="#home">
+                Arzu Isik
+            </a>
 
-    <p>
-        My research interests include behavioral finance, experimental finance,
-        financial technology, and market microstructure.
-    </p>
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
 
-    <h2>Research</h2>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#presentations">Presentations</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-    <p>
-        My current research examines how financial information, technology,
-        and platform design affect investor beliefs and investment decisions.
-    </p>
+        </div>
+    </nav>
 
-    <h2>Contact</h2>
+    <!-- Home -->
 
-    <p>Email: your-email@ucalgary.ca</p>
-</main>
+    <header class="hero" id="home">
+        <div class="container hero-grid">
+
+            <div>
+                <span class="hero-label">
+                    Finance PhD Student
+                </span>
+
+                <h1>Arzu Isik</h1>
+
+                <h2>
+                    Haskayne School of Business<br>
+                    University of Calgary
+                </h2>
+
+                <p>
+                    I study how financial technology, information,
+                    and digital platform design influence investor beliefs,
+                    risk-taking, and financial decision-making.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        class="button button-primary"
+                        href="#research"
+                    >
+                        View Research
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="#contact"
+                    >
+                        Contact Me
+                    </a>
+
+                </div>
+            </div>
+
+            <div
+                class="profile-placeholder"
+                aria-label="Profile photo placeholder"
+            >
+                AI
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- About -->
+
+        <section id="about">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>About Me</h2>
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        I am a PhD student in Finance at the Haskayne School
+                        of Business, University of Calgary. Before beginning
+                        my PhD, I completed graduate studies in Data Science
+                        at Harvard University and earned my bachelor's degree
+                        in Economics from Bogazici University.
+                    </p>
+
+                    <p>
+                        My research focuses on how people respond to financial
+                        information, technology, and digital platform features.
+                        I am particularly interested in experimental methods
+                        and questions related to retail investors and
+                        financial decision-making.
+                    </p>
+
+                    <div class="interests">
+                        <span class="interest-tag">
+                            Behavioral Finance
+                        </span>
+
+                        <span class="interest-tag">
+                            Experimental Finance
+                        </span>
+
+                        <span class="interest-tag">
+                            Financial Technology
+                        </span>
+
+                        <span class="interest-tag">
+                            Market Microstructure
+                        </span>
+
+                        <span class="interest-tag">
+                            Household Finance
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+
+        <section id="research">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Research</h2>
+
+                    <p>
+                        My current research studies how information costs,
+                        gamification, and digital platform design influence
+                        investor beliefs and financial behavior.
+                    </p>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="card">
+                        <h3>
+                            Does Paying for Data Change Investment Decisions?
+                        </h3>
+
+                        <div class="authors">
+                            With Philipp Chapkovski, Mariana Khapko,
+                            and Marius Zoican
+                        </div>
+
+                        <p>
+                            This project examines whether paying for financial
+                            information changes investor beliefs, forecasts,
+                            and portfolio decisions relative to receiving the
+                            same information for free.
+                        </p>
+
+                        <span class="status">
+                            Working Paper
+                        </span>
+                    </article>
+
+                    <article class="card">
+                        <h3>
+                            Does Trading Gamification Fuel Bubbles?
+                        </h3>
+
+                        <div class="authors">
+                            With Debaleena Goswami and Marius Zoican
+                        </div>
+
+                        <p>
+                            This project studies whether gamified trading
+                            environments increase risk-taking, affect price
+                            formation, and contribute to asset-price bubbles.
+                        </p>
+
+                        <span class="status">
+                            Work in Progress
+                        </span>
+                    </article>
+
+                    <article class="card">
+                        <h3>
+                            Can Gamification Reduce Financial Anxiety?
+                        </h3>
+
+                        <div class="authors">
+                            With Mariana Khapko, Mircea Matei,
+                            Mihai Toma, and Marius Zoican
+                        </div>
+
+                        <p>
+                            This project explores whether gamification can
+                            reduce financial anxiety and support engagement
+                            with financial education and decision-making.
+                        </p>
+
+                        <span class="status">
+                            Work in Progress
+                        </span>
+                    </article>
+
+                    <article class="card">
+                        <h3>
+                            Classroom.Bot
+                        </h3>
+
+                        <div class="authors">
+                            Data Science Capstone Project, Harvard University
+                        </div>
+
+                        <p>
+                            A classroom-focused artificial intelligence
+                            assistant designed to support interactive learning
+                            and help students engage with course materials.
+                        </p>
+
+                        <span class="status">
+                            Capstone Project
+                        </span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+
+        <section id="education">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Education</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <h3>PhD in Finance</h3>
+
+                        <div class="institution">
+                            Haskayne School of Business,
+                            University of Calgary
+                        </div>
+
+                        <div class="date">
+                            2025–Present
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>
+                            Master of Liberal Arts in Extension Studies,
+                            Data Science
+                        </h3>
+
+                        <div class="institution">
+                            Harvard University
+                        </div>
+
+                        <div class="date">
+                            2026
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Certificate in Data Science</h3>
+
+                        <div class="institution">
+                            Harvard University
+                        </div>
+
+                        <div class="date">
+                            2023
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>FinTech Program</h3>
+
+                        <div class="institution">
+                            Northwestern University,
+                            School of Professional Studies
+                        </div>
+
+                        <div class="date">
+                            2020–2021
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Bachelor of Arts in Economics</h3>
+
+                        <div class="institution">
+                            Bogazici University
+                        </div>
+
+                        <div class="date">
+                            2014
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentations -->
+
+        <section id="presentations">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Presentations and Research Training</h2>
+
+                    <p>
+                        Selected conference presentations, workshops,
+                        and summer schools.
+                    </p>
+                </div>
+
+                <ul class="presentation-list">
+
+                    <li>
+                        <span class="presentation-title">
+                            Experimental Finance Conference 2026
+                        </span>
+
+                        <span class="presentation-details">
+                            Toulouse, France · June 15–17, 2026
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            Northern Finance Association 2026
+                        </span>
+
+                        <span class="presentation-details">
+                            Québec City, Canada · September 2026
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            ASSA 2027 Annual Meeting
+                        </span>
+
+                        <span class="presentation-details">
+                            Washington, DC · Forthcoming
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            Summer School on Market Microstructure
+                        </span>
+
+                        <span class="presentation-details">
+                            Leuven, Belgium · June 1–5, 2026
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            Experimental Finance Summer School
+                        </span>
+
+                        <span class="presentation-details">
+                            TBS Education, Toulouse · June 13–14, 2026
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            Econometric Society Summer School in
+                            Dynamic Structural Econometrics
+                        </span>
+
+                        <span class="presentation-details">
+                            University of Michigan, Ann Arbor ·
+                            August 3–8, 2026
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="presentation-title">
+                            Finance in the Digital Age – FiDA 2026
+                        </span>
+
+                        <span class="presentation-details">
+                            University of Calgary · May 26–27, 2026
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+
+        <section id="experience">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Professional Experience</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <h3>Junior Data Scientist</h3>
+
+                        <div class="institution">
+                            Opendatabay, United Kingdom
+                        </div>
+
+                        <div class="date">
+                            2024–2025
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>External Data Scientist</h3>
+
+                        <div class="institution">
+                            Peking University HSBC Business School
+                        </div>
+
+                        <div class="date">
+                            2023
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Financial and Budgeting Specialist</h3>
+
+                        <div class="institution">
+                            Enerjisa Enerji &amp; E.ON, Turkey
+                        </div>
+
+                        <div class="date">
+                            2014–2019
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CV -->
+
+        <section id="cv">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Curriculum Vitae</h2>
+                </div>
+
+                <div class="cv-box">
+                    <h3>Academic CV</h3>
+
+                    <p>
+                        My full academic CV, including research projects,
+                        presentations, education, professional experience,
+                        awards, and technical skills, will be available here.
+                    </p>
+
+                    <a
+                        class="button"
+                        href="#contact"
+                    >
+                        CV Coming Soon
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+
+        <section id="contact">
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Contact</h2>
+
+                    <p>
+                        For research-related questions, collaborations,
+                        or professional inquiries, please contact me by email.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <div class="contact-item">
+                        <strong>Email</strong>
+
+                        <a href="mailto:arzu.isiktopbas@ucalgary.ca">
+                            arzu.isiktopbas@ucalgary.ca
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Institution</strong>
+
+                        Haskayne School of Business<br>
+                        University of Calgary
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Location</strong>
+
+                        Calgary, Alberta, Canada
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Research Areas</strong>
+
+                        Behavioral Finance, FinTech,
+                        and Market Microstructure
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Arzu Isik · University of Calgary
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navLinks = document.getElementById("navLinks");
+        const menuLinks = document.querySelectorAll(".nav-links a");
+        const sections = document.querySelectorAll("header[id], section[id]");
+
+        menuButton.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+        });
+
+        menuLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+            });
+        });
+
+        window.addEventListener("scroll", function () {
+            let currentSection = "";
+
+            sections.forEach(function (section) {
+                const sectionTop = section.offsetTop - 130;
+
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            menuLinks.forEach(function (link) {
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + currentSection
+                ) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
