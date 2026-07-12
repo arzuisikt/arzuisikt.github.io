@@ -230,8 +230,8 @@
 
     .section-head {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 28px;
+      grid-template-columns: 1fr;
+      gap: 0;
       margin-bottom: 34px;
     }
 
@@ -260,8 +260,15 @@
 
     .about-copy {
       max-width: 760px;
-      margin-left: 198px;
+      margin-left: 0;
       font-size: 18px;
+    }
+
+    .about-intro {
+      margin-top: 0;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.55;
     }
 
     .topics {
@@ -281,7 +288,7 @@
 
     /* Research */
     .research-list {
-      margin-left: 198px;
+      margin-left: 0;
     }
 
     .research-item {
@@ -328,7 +335,7 @@
 
     /* Timeline */
     .timeline {
-      margin-left: 198px;
+      margin-left: 0;
     }
 
     .timeline-row {
@@ -363,7 +370,7 @@
 
     /* Two-column presentations */
     .dual-grid {
-      margin-left: 198px;
+      margin-left: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 26px;
@@ -409,7 +416,7 @@
 
     /* Academic service */
     .service-card {
-      margin-left: 198px;
+      margin-left: 0;
       padding: 34px;
       background: var(--ink);
       color: var(--white);
@@ -483,7 +490,7 @@
 
     /* Contact */
     .contact-grid {
-      margin-left: 198px;
+      margin-left: 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px 34px;
@@ -617,20 +624,8 @@
     </aside>
 
     <main class="content">
-      <header class="hero">
-        <div class="eyebrow">Finance · Experiments · Technology</div>
-        <h2>
-          I study how information, technology, and digital platform design shape financial decisions.
-        </h2>
-        <p>
-          My research focuses on investor beliefs, risk-taking, financial information, gamification, and market design.
-        </p>
-
-      </header>
-
       <section id="about">
         <div class="section-head">
-          <div class="section-number">01 · Profile</div>
           <div class="section-title">
             <h3>About Me</h3>
             <p>Academic background and research interests.</p>
@@ -638,6 +633,9 @@
         </div>
 
         <div class="about-copy">
+          <p class="about-intro">
+            I study how information, technology, and digital platform design shape financial decisions. My research focuses on investor beliefs, risk-taking, financial information, gamification, and market design.
+          </p>
           <p>
             I am a PhD student in Finance at the Haskayne School of Business, University of Calgary. Before beginning my PhD, I completed graduate studies in Data Science and Artificial Intelligence at Harvard University and earned my bachelor's degree in Economics from Boğaziçi University.
           </p>
@@ -658,7 +656,6 @@
 
       <section id="research">
         <div class="section-head">
-          <div class="section-number">02 · Work</div>
           <div class="section-title">
             <h3>Research</h3>
             <p>Selected working papers and ongoing projects.</p>
@@ -714,7 +711,6 @@
 
       <section id="education">
         <div class="section-head">
-          <div class="section-number">03 · Training</div>
           <div class="section-title">
             <h3>Education</h3>
             <p>Academic and professional education.</p>
@@ -758,7 +754,6 @@
 
       <section id="presentations">
         <div class="section-head">
-          <div class="section-number">04 · Academic Activity</div>
           <div class="section-title">
             <h3>Presentations & Research Training</h3>
             <p>Conference presentations are separated from summer schools and research training.</p>
@@ -814,7 +809,6 @@
 
       <section id="service">
         <div class="section-head">
-          <div class="section-number">05 · Academic Service</div>
           <div class="section-title">
             <h3>Academic Initiatives</h3>
             <p>Seminar organization and research community building.</p>
@@ -840,7 +834,6 @@
 
       <section id="experience">
         <div class="section-head">
-          <div class="section-number">06 · Background</div>
           <div class="section-title">
             <h3>Professional Experience</h3>
             <p>Selected professional roles before and during graduate study.</p>
@@ -876,7 +869,6 @@
 
       <section id="contact">
         <div class="section-head">
-          <div class="section-number">07 · Contact</div>
           <div class="section-title">
             <h3>Contact</h3>
             <p>For research, collaboration, and professional inquiries.</p>
