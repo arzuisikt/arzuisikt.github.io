@@ -104,6 +104,48 @@
       padding-left: 5px;
     }
 
+
+
+    .sidebar-social {
+      margin-top: auto;
+      padding-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .sidebar-social a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 7px;
+      transition: 0.2s ease;
+    }
+
+    .sidebar-social a:hover {
+      color: var(--ink);
+      background: #ffffff;
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .sidebar-social svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
+    .sidebar-social .text-icon {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
     .sidebar-footer {
       margin-top: auto;
       padding-top: 30px;
@@ -542,11 +584,22 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="sidebar-footer">
-        Behavioral Finance<br>
-        Experimental Finance<br>
-        FinTech<br>
-        Market Microstructure
+      <div class="sidebar-social" aria-label="Academic and professional profiles">
+        <a href="https://scholar.google.com/citations?user=FuXtBD0AAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l4 2.18v5.32L12 21l7-4.5v-5.32L21 10.09V16h2V9L12 3Zm0 2.27L18.84 9 12 12.73 5.16 9 12 5.27Zm5 10.14-5 3.21-5-3.21v-3.14l5 2.73 5-2.73v3.14Z"/></svg>
+        </a>
+
+        <a href="https://github.com/arzuisikt" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7C5.73.7.7 5.86.7 12.24c0 5.1 3.29 9.43 7.86 10.96.57.11.78-.25.78-.56v-2.17c-3.2.71-3.87-1.39-3.87-1.39-.52-1.36-1.28-1.72-1.28-1.72-1.05-.73.08-.72.08-.72 1.16.08 1.77 1.22 1.77 1.22 1.03 1.8 2.7 1.28 3.36.98.1-.76.4-1.28.73-1.58-2.55-.3-5.24-1.3-5.24-5.72 0-1.26.44-2.3 1.17-3.11-.12-.3-.51-1.49.11-3.07 0 0 .96-.31 3.13 1.19a10.55 10.55 0 0 1 5.7 0c2.17-1.5 3.12-1.19 3.12-1.19.62 1.58.23 2.77.11 3.07.73.81 1.17 1.85 1.17 3.11 0 4.43-2.69 5.42-5.25 5.71.41.37.78 1.09.78 2.2v3.26c0 .31.21.68.79.56 4.56-1.54 7.85-5.86 7.85-10.96C23.3 5.86 18.27.7 12 .7Z"/></svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/arzu-isik-a5698851/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6A2.5 2.5 0 1 1 4.98 3.5ZM.5 8h4V23h-4V8Zm7 0h3.84v2.05h.05c.53-1.02 1.84-2.1 3.79-2.1 4.05 0 4.8 2.67 4.8 6.14V23h-4v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.17V23h-4V8Z"/></svg>
+        </a>
+
+        <a href="https://hq.ssrn.com/UserHome.cfm" target="_blank" rel="noopener noreferrer" aria-label="SSRN" title="SSRN">
+          <span class="text-icon" aria-hidden="true">SSRN</span>
+        </a>
       </div>
     </aside>
 
